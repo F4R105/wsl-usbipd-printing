@@ -6,11 +6,11 @@ const USB = require('@node-escpos/usb-adapter');
  * Example output: Bus 001 Device 003: ID 04b8:0202 Seiko Epson...
  * Here, VID is 0x04b8 and PID is 0x0202.
  */
-const vid = 0x04b8; // Replace with your VID
-const pid = 0x0202; // Replace with your PID
+const vid = 0x0483; // Replace with your VID
+const pid = 0x5743; // Replace with your PID
 
 const device = new USB(vid, pid);
-const printer = new Printer(device);
+const printer = new Printer(device, {});
 
 device.open(async function (error) {
   if (error) {
